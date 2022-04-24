@@ -38,7 +38,7 @@ class Game {
         this.frames++;
         this.player.draw();
         //this.drawBackground(); 
-        //this.drawScores();
+        this.drawTime();
         //this.enemies.draw();
         this.createEnemies(); 
         this.enemies.forEach((enemy) => {
@@ -54,13 +54,37 @@ class Game {
         this.enemies.push(new Enemies(this));
       }
     }
+
+    drawTime() {
+      let time = Math.floor(this.frames / 60)
+      let count = 30; // seconds
+      count--
+      if (count < 0 ) {
+        clearInterval(count)
+      }
+      this.ctx.fillStyle = "black";
+      this.ctx.font = "20px Times New Roman";
+      this.ctx.fillText(`Remaining Time: ${time}`, 40, 70);
+     
+    }
+
+    checkGameOver() {
+
+      const timesup = this.count <= 30;
+
+      if (timesup) {
+        this.stop();
+      }
+    }
+
+    stop() {
+      clearInterval(this.intervalId);
   }
+}
+
+
     
-  
-  
-  
-    
-  
+
 /* 
      checkGameOver() {
     const player = this.player;
