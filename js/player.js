@@ -57,12 +57,14 @@ console.log(player)
 
 //CLASS ENEMIES AND BUSES 
 
+let enemies = [];
+
 class Enemies {
   constructor(game) {
       this.game = game;
-      this.x = Math.floor(Math.random() * 300);
+      this.x = 5;
+      this.color ='blue'
       this.y = 0;
-      this.color = color;
       this.width = 25;
       this.height = 25;
     }
@@ -84,10 +86,11 @@ class Enemies {
   
     draw() {
       this.game.ctx.fillStyle = this.color;
-      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+      this.game.ctx.fillRect(this.x, this.y, this.color, this.width, this.height);
     }
+
 }
 
-const enemies = new Enemies( 0, 0, 'blue', 25, 25);
+enemies = new Enemies()
 
 console.log(enemies)

@@ -39,34 +39,40 @@ class Game {
         this.player.draw();
         //this.drawBackground(); 
         //this.drawScores();  
-        this.createEnemies(); 
-        this.enemie.forEach((enemy) => {
+       /*  this.createEnemies(); 
+         this.enemies.forEach((enemy) => {
           enemy.y++;
-          enemy.draw();
-        });
-        this.checkGameOver(); 
+          enemy.draw(); */
+        /* }); */
+        this.checkGameOver();  
       } 
       
     createEnemies() {
-        if (this.frames % 100 === 0) {
-        this.enemies.push(enemy);
-    }
-  }
 
-    checkGameOver() {
+      setInterval (() => {
+        enemies.push(new Enemy())}, 1000)
+      }
+      
+       /*  if (this.frames % 100 === 0) {
+        this.enemies.push(enemy); */
+  
+
+     checkGameOver() {
     const player = this.player;
     const crashed = this.enemies.some(function (enemy) {
       return player.crashWith(enemy);
-    });
+    }); }
 
     if (crashed) {
       this.stop();
     }
-  }
-    stop() {
+  
+/*     stop() {
         clearInterval(this.intervalId);
-      }
-    } 
+      } */
+    
+    }
+    
 
     
 
