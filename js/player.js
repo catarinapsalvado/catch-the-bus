@@ -60,16 +60,18 @@ console.log(player)
 let enemies = [];
 
 class Enemies {
-  constructor(game) {
-      this.game = game;
-      this.x = 5;
-      this.color ='blue'
-      this.y = 0;
-      this.width = 25;
-      this.height = 25;
+  constructor(game, x, y,color, width, height, /* speed */ ){
+    this.game = game;
+    this.x = x;
+    this.y = y 
+    this.color = color;
+    this.width = width;
+    this.height = height;
+  /*   this.speed = speed; */
     }
   
-    left() {
+
+   /*  left() {
       return this.x;
     }
     right() {
@@ -82,15 +84,18 @@ class Enemies {
   
     bottom() {
       return this.y + this.height;
-    }
+    } */
   
     draw() {
-      this.game.ctx.fillStyle = this.color;
-      this.game.ctx.fillRect(this.x, this.y, this.color, this.width, this.height);
+      this.game.ctx.fillStyle = 'blue'
+      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 
 }
 
-enemies = new Enemies()
+enemies = new Enemies(this, Math.floor(Math.random() * 300) , 0, 'blue', 10, 10,/*  {x:1,y:1} */)
 
 console.log(enemies)
+
+
+// Create enemies extension for buses,

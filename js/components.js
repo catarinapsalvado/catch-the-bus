@@ -38,25 +38,30 @@ class Game {
         this.frames++;
         this.player.draw();
         //this.drawBackground(); 
-        //this.drawScores();  
-       /*  this.createEnemies(); 
-         this.enemies.forEach((enemy) => {
+        //this.drawScores();
+        //this.enemies.draw();
+        this.createEnemies(); 
+        this.enemies.forEach((enemy) => {
           enemy.y++;
-          enemy.draw(); */
-        /* }); */
-        this.checkGameOver();  
-      } 
+          enemy.draw(); 
+         }); 
+         }
+        //this.checkGameOver();  
       
-    createEnemies() {
-
-      setInterval (() => {
-        enemies.push(new Enemy())}, 1000)
-      }
-      
-       /*  if (this.frames % 100 === 0) {
-        this.enemies.push(enemy); */
   
-
+    createEnemies() {
+      if (this.frames % 200 === 0) {
+        this.enemies.push(new Enemies(this));
+      }
+    }
+  }
+    
+  
+  
+  
+    
+  
+/* 
      checkGameOver() {
     const player = this.player;
     const crashed = this.enemies.some(function (enemy) {
@@ -71,7 +76,7 @@ class Game {
         clearInterval(this.intervalId);
       } */
     
-    }
+    
     
 
     
