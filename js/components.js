@@ -121,43 +121,79 @@ class Game {
   
     checkColisionsEnemies() {
       const player = this.player;
-      const crashed = this.enemies.some(function (enemy) {
+     /*  const crashed = this.enemies.some(function (enemy) {
         return player.crashWith(enemy);
-      });
+      }); */
 
-      const crashed2 = this.redsign.some(function (redsign) {
+      for (let i = 0; i < this.enemies.length; i ++){
+        if ((this.player.y <= this.enemies[i].y + this.enemies[i].height) && 
+        (this.player.x + this.player.width >= this.enemies[i].x) && 
+        (this.player.x <= this.enemies[i].x + this.enemies[i].width)) {
+        this.score --;
+        this.enemies.splice(i, 1); 
+        }
+      }
+    }
+
+      /* const crashed2 = this.redsign.some(function (redsign) {
         return player.crashWith(redsign);  });
 
       const crashed3 = this.oldLady.some(function (lady) {
         return player.crashWith(lady);  });
 
       if (crashed || crashed2 || crashed3) {
-        this.stop();
-        };
-      }
+        count = 30 -  Math.floor(this.frames / 60);
+        }; */
+      /* } */
       
+        checkColisionsEnemies() {
+      const player = this.player;
+     /*  const crashed = this.enemies.some(function (enemy) {
+        return player.crashWith(enemy);
+      }); */
+
+      for (let i = 0; i < this.enemies.length; i ++){
+        if ((this.player.y <= this.enemies[i].y + this.enemies[i].height) && 
+        (this.player.x + this.player.width >= this.enemies[i].x) && 
+        (this.player.x <= this.enemies[i].x + this.enemies[i].width)) {
+        this.score --;
+        this.enemies.splice(i, 1); 
+        }
+      }
+    }
+
        checkColisionsBuses(){
         /* const catchBus = this.bus.some(function (bus) {
           return player.crashWith(bus);
         }); */
 
         for (let i = 0; i < this.bus.length; i ++){
-          if ((this.player.y <= this.bus[i].y + this.bus[i].height) && (this.player.x + this.player.width >= this.bus[i].x) && (this.player.x <= this.bus[i].x + this.bus[i].width)){
+          if ((this.player.y <= this.bus[i].y + this.bus[i].height) && 
+          (this.player.x + this.player.width >= this.bus[i].x) && 
+          (this.player.x <= this.bus[i].x + this.bus[i].width)) {
           this.score ++;
           this.bus.splice(i, 1); 
           } 
         }
       }
     
-      /*     if (this.score % 5 === 0){
-            this.bus.splice(0, 1);
-          } */
-        
+      
+      checkColisionsOldLady() {
+        const player = this.player;
+       /*  const crashed = this.enemies.some(function (enemy) {
+          return player.crashWith(enemy);
+        }); */
+  
+        for (let i = 0; i < this.oldLady.length; i ++){
+          if ((this.player.y <= this.oldLady[i].y + this.oldLady[i].height) && 
+          (this.player.x + this.player.width >= this.oldLady[i].x) && 
+          (this.player.x <= this.enemies[i].x + this.enemies[i].width)) {
+          this.score --;
+          this.enemies.splice(i, 1); 
+          }
+        }
+      }
 
-         /* if (catchBus) {
-          this.score ++
-        } 
-      } */
  
       
        
