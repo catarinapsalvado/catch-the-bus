@@ -20,12 +20,15 @@ class Game {
         this.player = player;
         this.controls = null;
         this.enemies = [];
+        this.bus = [];
+        this.oldLady = [];
+        this.redsign = [];
         this.frames = 0;
     }
 
      
       start() {   
-          this.player = new Player(this, 100, 100, 'red', 50, 50);
+          this.player = new Player(this, 495, 300, 'red', 50, 50);
           this.intervalId = setInterval(() => {
           this.update();
           }, 1000 / 60);; 
@@ -39,48 +42,122 @@ class Game {
         this.player.draw();
         //this.drawBackground(); 
         this.drawTime();
-        //this.enemies.draw();
-        this.createEnemies(); 
+        this.drawScores() 
+        this.createEnemies();  
+        this.createBuses();
+        this.createOldLady();
+        this.createRedSign();
         this.enemies.forEach((enemy) => {
-          enemy.y++;
+          enemy.y+=enemy.speed;
           enemy.draw(); 
          }); 
-         }
-        //this.checkGameOver();  
+         this.bus.forEach((buses) => {
+          buses.y+=buses.speed;
+          buses.draw(); 
+         });
+         this.oldLady.forEach((lady) => {
+          lady.y+=lady.speed;
+          lady.draw(); 
+         });
+         this.redsign.forEach((red) => {
+          red.y+=red.speed;
+          red.draw(); 
+         });
+         this.checkColisionsEnemies();
+         this.checkColisionsBuses();
+         this.checkGameOver();
+        }
+        
       
   
     createEnemies() {
       if (this.frames % 200 === 0) {
-        this.enemies.push(new Enemies(this));
+        this.enemies.push(new Enemies(this, Math.floor(Math.random() * 1000) , 0, 'blue', 20, 20, Math.random()*3+1));
       }
     }
 
+    createBuses() {
+      if (this.frames % 500 === 0) {
+        this.bus.push(new Buses(this, Math.floor(Math.random() * 1000) , 0, 'green', 20, 20, Math.random()*3+1));
+
+      }
+    }
+
+    createOldLady() {
+      if (this.frames % 200 === 0) {
+        this.bus.push(new Oldlady(this, Math.floor(Math.random() * 1000) , 0, 'pink', 20, 20, Math.random()*2+1));
+
+      }
+    }
+
+    createRedSign(){
+      if (this.frames % 200 === 0) {
+        this.bus.push(new Redsign(this, Math.floor(Math.random() * 1000) , 0, 'yellow', 20, 20, Math.random()*3+1));
+    }
+
+  }
+
     drawTime() {
-      let time = Math.floor(this.frames / 60)
-      let count = 30; // seconds
-      count--
-      if (count < 0 ) {
-        clearInterval(count)
+  
+      /* let time = Math.floor(this.frames / 60) */
+      let count = 30 -  Math.floor(this.frames / 60); // seconds
+      if (count <= 0 ) {
+        clearInterval(this.intervalId)
       }
       this.ctx.fillStyle = "black";
       this.ctx.font = "20px Times New Roman";
-      this.ctx.fillText(`Remaining Time: ${time}`, 40, 70);
+      this.ctx.fillText(`Remaining Time: ${count}`, 40, 70);
      
     }
 
-    checkGameOver() {
+    
+    drawScores() {
+    let score = 0; //make this count with the buses that we catch
+    this.ctx.font = '32px serif';
+    this.ctx.fillStyle = 'black';
+    this.ctx.fillText(`Score: ${score}`, 800, 550);
+  }
 
-      const timesup = this.count <= 30;
+  
+    checkColisionsEnemies() {
+      const player = this.player;
+      const crashed = this.enemies.some(function (enemy) {
+        return player.crashWith(enemy);
+      });
+
+      const crashed2 = this.redsign.some(function (redsign) {
+        return player.crashWith(redsign);  });
+
+      if (crashed || crashed2) {
+        this.stop();
+        };
+      }
+      
+      checkColisionsBuses(){
+        const catchBus = this.buses.some(function (bus) {
+          return player.crashWith(bus);
+        });
+        if (catchBus) {
+          this.score ++
+        }
+      }
+
+    /* checkGameOver() {
+
+      const timesup = this.count <= 0;
 
       if (timesup) {
         this.stop();
       }
-    }
+    } */
 
     stop() {
       clearInterval(this.intervalId);
   }
 }
+
+
+
 
 
     

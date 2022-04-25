@@ -34,7 +34,7 @@ class Player {
     
       left() {
         return this.x;
-      }
+      } 
       right() {
         return this.x + this.width;
       }
@@ -47,9 +47,44 @@ class Player {
         return this.y + this.height;
       }
   
+      crashWith(enemies) {
+        return !(
+          this.bottom() < enemies.top() ||
+          this.top() > enemies.bottom() ||
+          this.right() < enemies.left() ||
+          this.left() > enemies.right()
+        );
 }
 
-const player = new Player(this, 100, 100, 'red', 50, 50);
+        crashWith(redSign) {
+            return !(
+              this.bottom() < redSign.top() ||
+              this.top() > redSign.bottom() ||
+              this.right() < redSign.left() ||
+              this.left() > redSign.right()
+            );}
+
+            crashWith(oldLady) {
+              return !(
+                this.bottom() < oldLady.top() ||
+                this.top() > oldLady.bottom() ||
+                this.right() < oldLady.left() ||
+                this.left() > oldLady.right()
+              );}
+              
+            crashWith(buses) {
+                return !(
+                  this.bottom() < buses.top() ||
+                  this.top() > buses.bottom() ||
+                  this.right() < buses.left() ||
+                  this.left() > buses.right()
+                );}
+    }
+
+
+
+
+const player = new Player
 
 
 console.log(player)
