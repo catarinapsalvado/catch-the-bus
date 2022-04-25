@@ -24,6 +24,7 @@ class Game {
         this.oldLady = [];
         this.redsign = [];
         this.frames = 0;
+        this.score = 0;
     }
 
      
@@ -65,7 +66,7 @@ class Game {
          });
          this.checkColisionsEnemies();
          this.checkColisionsBuses();
-         this.checkGameOver();
+         //this.checkGameOver();
         }
         
       
@@ -77,7 +78,7 @@ class Game {
     }
 
     createBuses() {
-      if (this.frames % 500 === 0) {
+      if (this.frames % 100 === 0) {
         this.bus.push(new Buses(this, Math.floor(Math.random() * 1000) , 0, 'green', 20, 20, Math.random()*3+1));
 
       }
@@ -85,22 +86,22 @@ class Game {
 
     createOldLady() {
       if (this.frames % 200 === 0) {
-        this.bus.push(new Oldlady(this, Math.floor(Math.random() * 1000) , 0, 'pink', 20, 20, Math.random()*2+1));
+        this.oldLady.push(new Oldlady(this, Math.floor(Math.random() * 1000) , 0, 'pink', 20, 20, Math.random()*2+1));
 
       }
     }
 
     createRedSign(){
       if (this.frames % 200 === 0) {
-        this.bus.push(new Redsign(this, Math.floor(Math.random() * 1000) , 0, 'yellow', 20, 20, Math.random()*3+1));
+        this.redsign.push(new Redsign(this, Math.floor(Math.random() * 1000) , 0, 'yellow', 20, 20, Math.random()*3+1));
     }
 
   }
 
     drawTime() {
   
-      /* let time = Math.floor(this.frames / 60) */
-      let count = 30 -  Math.floor(this.frames / 60); // seconds
+      
+      let count = 30 -  Math.floor(this.frames / 60); 
       if (count <= 0 ) {
         clearInterval(this.intervalId)
       }
@@ -112,10 +113,9 @@ class Game {
 
     
     drawScores() {
-    let score = 0; //make this count with the buses that we catch
     this.ctx.font = '32px serif';
     this.ctx.fillStyle = 'black';
-    this.ctx.fillText(`Score: ${score}`, 800, 550);
+    this.ctx.fillText(`Score: ${this.score}`, 800, 550);
   }
 
   
@@ -128,19 +128,39 @@ class Game {
       const crashed2 = this.redsign.some(function (redsign) {
         return player.crashWith(redsign);  });
 
-      if (crashed || crashed2) {
+      const crashed3 = this.oldLady.some(function (lady) {
+        return player.crashWith(lady);  });
+
+      if (crashed || crashed2 || crashed3) {
         this.stop();
         };
       }
       
-      checkColisionsBuses(){
-        const catchBus = this.buses.some(function (bus) {
+       checkColisionsBuses(){
+        /* const catchBus = this.bus.some(function (bus) {
           return player.crashWith(bus);
-        });
-        if (catchBus) {
-          this.score ++
+        }); */
+
+        for (let i = 0; i < this.bus.length; i ++){
+          if ((this.player.y <= this.bus[i].y + this.bus[i].height) && (this.player.x + this.player.width >= this.bus[i].x) && (this.player.x <= this.bus[i].x + this.bus[i].width)){
+          this.score ++;
+          this.bus.splice(i, 1); 
+          } 
         }
       }
+    
+      /*     if (this.score % 5 === 0){
+            this.bus.splice(0, 1);
+          } */
+        
+
+         /* if (catchBus) {
+          this.score ++
+        } 
+      } */
+ 
+      
+       
 
     /* checkGameOver() {
 
@@ -155,6 +175,7 @@ class Game {
       clearInterval(this.intervalId);
   }
 }
+
 
 
 
