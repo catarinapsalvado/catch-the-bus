@@ -1,7 +1,3 @@
-this.canvas = document.getElementById('canvas');
-this.ctx = this.canvas.getContext('2d');
-
-
 class Enemies {
   constructor(game, x, y,color, width, height, speed ){
     this.game = game;
