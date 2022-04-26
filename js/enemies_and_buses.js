@@ -26,7 +26,7 @@ class Enemies {
 }
 
 draw() {
-  this.game.ctx.fillStyle = 'pink'
+  this.game.ctx.fillStyle = 'blue'
   this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
 }
   
@@ -91,10 +91,6 @@ class Oldlady extends Enemies {
       return this.y + this.height;
     }
 
-    draw() {
-      this.game.ctx.fillStyle = 'pink'
-      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
 
 }
 

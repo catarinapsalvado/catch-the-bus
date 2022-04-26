@@ -31,7 +31,7 @@ class Game {
   }
 
   start() {
-    this.player = new Player(this, 495, 300, 200, 200);
+    this.player = new Player(this, 495, 300, 100, 100);
     this.count = 60 - Math.floor(this.frames / 60);
     this.intervalId = setInterval(() => {
       this.update();
@@ -75,13 +75,13 @@ class Game {
 
   createEnemies() {
     if (this.frames % 100 === 0) {
-      this.enemies.push( new Enemies( this,Math.floor(Math.random() * 1000),0,"blue", 100, 100, Math.random() * 3 + 1));
+      this.enemies.push( new Enemies( this,Math.floor(Math.random() * 900),0,"blue", 100, 100, Math.random() * 3 + 1));
     }
   }
 
   createBuses() {
     if (this.frames % 200 === 0) {
-      this.bus.push( new Buses( this, Math.floor(Math.random() * 1000), 0, "green", 125, 70, Math.random() * 2 + 1));}
+      this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, "green", 125, 70, Math.random() * 2 + 1));}
     
   }
 
@@ -90,11 +90,11 @@ class Game {
       this.oldLady.push(
         new Oldlady(
           this,
-          Math.floor(Math.random() * 1000),
+          Math.floor(Math.random() * 900),
           0,
           "pink",
-          80,
-          150,
+          100,
+          125,
           Math.random() * 2 + 1
         )
       );
@@ -111,7 +111,7 @@ class Game {
       this.redsign.push(
         new Redsign(
           this,
-          Math.floor(Math.random() * 1000),
+          Math.floor(Math.random() * 900),
           0,
           "yellow",
           50,
@@ -144,6 +144,8 @@ class Game {
     if (crashed ) {
       this.count -= 5;
       this.enemies = [];
+      this.oldLady = [];
+       this.redsign = [];
 
     } else if (crashed2)  
     { this.count -= 5;
@@ -161,7 +163,7 @@ class Game {
 
   drawScores() {
     this.ctx.font = "32px serif";
-    this.ctx.fillStyle = "black";
+    this.ctx.fillStyle = "white";
     this.ctx.fillText(`Score: ${this.score}`, 800, 550);
   }
 

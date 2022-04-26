@@ -15,7 +15,7 @@ class Player {
   } */
 
     draw() {
-      this.img.src = '/docs/images/player.png';
+      this.img.src = '/docs/images/giphy.gif';
       this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
 
