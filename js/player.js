@@ -57,4 +57,3 @@ const player = new Player();
 
 console.log(player);
 
-//CLASS ENEMIES AND BUSES

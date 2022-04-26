@@ -69,7 +69,7 @@ class Game {
     });
     /* this.checkColisionsEnemies(); */
     this.checkColisionsBuses();
-    //this.checkGameOver();
+    this.checkGameOver();
   }
 
   createEnemies() {
@@ -134,13 +134,19 @@ class Game {
       return player.crashWith(sign);
     });
 
-    if (crashed || crashed2 || crashed3) {
+    if (crashed ) {
       this.count -= 5;
       this.enemies = [];
+
+    } else if (crashed2)  
+    { this.count -= 5;
       this.oldLady = [];
-      this.redsign = []
-      this.bus = [];
+
+    } else if (crashed3) {
+    this.count -= 5;
+    this.redsign = [];
     }
+
     this.ctx.fillStyle = "black";
     this.ctx.font = "20px Times New Roman";
     this.ctx.fillText(`Remaining Time: ${this.count.toFixed(0)}`, 40, 70);
@@ -189,20 +195,26 @@ class Game {
   stop() {
     clearInterval(this.intervalId);
   }
+
+  checkGameOver(){
+
+    if (this.count <= 0 && this.score >= 10){
+      this.ctx.clearRect(0, 0, this.width, this.height);
+      this.ctx.fillStyle = "black";
+      this.ctx.font = "100px Times New Roman";
+      this.ctx.fillText("YOU'VE WON :)", 175, 300);
+    }
+     else if(this.count <= 0 && this.score < 10) {
+      this.ctx.clearRect(0, 0, this.width, this.height); 
+      this.ctx.fillStyle = "black";
+      this.ctx.font = "100px Times New Roman";
+      this.ctx.fillText("YOU'VE LOST :(", 175, 300);
+     
+  }
+}
 }
 
 
-/* 
-     checkGameOver() {
-    const player = this.player;
-    const crashed = this.enemies.some(function (enemy) {
-      return player.crashWith(enemy);
-    }); }
 
-    if (crashed) {
-      this.stop();
-    }
-  
-/*     stop() {
-        clearInterval(this.intervalId);
-      } */
+
+
