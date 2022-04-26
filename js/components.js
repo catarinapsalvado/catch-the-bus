@@ -27,10 +27,11 @@ class Game {
     this.score = 0;
     this.count = null;
     this.timeOut = null;
+    this.background = new Image();
   }
 
   start() {
-    this.player = new Player(this, 495, 300, "red", 80, 80);
+    this.player = new Player(this, 495, 300, 200, 200);
     this.count = 60 - Math.floor(this.frames / 60);
     this.intervalId = setInterval(() => {
       this.update();
@@ -42,8 +43,8 @@ class Game {
   update() {
     this.ctx.clearRect(0, 0, this.width, this.height);
     this.frames++;
+    this.drawBackground();
     this.player.draw();
-    //this.drawBackground();
     this.timeOut = setTimeout(() => Math.floor((this.count -= 0.02)), 1000);
     this.drawTime();
     this.drawScores();
@@ -74,13 +75,14 @@ class Game {
 
   createEnemies() {
     if (this.frames % 100 === 0) {
-      this.enemies.push( new Enemies( this,Math.floor(Math.random() * 1000),0,"blue", 50, 50, Math.random() * 3 + 1));
+      this.enemies.push( new Enemies( this,Math.floor(Math.random() * 1000),0,"blue", 100, 100, Math.random() * 3 + 1));
     }
   }
 
   createBuses() {
     if (this.frames % 200 === 0) {
-      this.bus.push( new Buses( this, Math.floor(Math.random() * 1000), 0, "green", 50, 50, Math.random() * 2 + 1));}
+      this.bus.push( new Buses( this, Math.floor(Math.random() * 1000), 0, "green", 125, 70, Math.random() * 2 + 1));}
+    
   }
 
   createOldLady() {
@@ -91,12 +93,17 @@ class Game {
           Math.floor(Math.random() * 1000),
           0,
           "pink",
-          50,
-          50,
+          80,
+          150,
           Math.random() * 2 + 1
         )
       );
     }
+  }
+
+  drawBackground(){
+    this.background.src = '/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
+    this.ctx.drawImage(this.background, this.x, this.y, this.width, this.height);
   }
 
   createRedSign() {

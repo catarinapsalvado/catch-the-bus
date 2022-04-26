@@ -1,17 +1,22 @@
 class Player {
-  constructor(game, x, y, color, width, height) {
+  constructor(game, x, y,/*  color */ width, height, ){
     this.game = game;
     this.x = x;
     this.y = y;
-    this.color = color;
+    //this.color = color;
     this.width = width;
     this.height = height;
-    //this.img = new Image();
+    this.img = new Image();
   }
 
-  draw() {
+  /* draw() {
     this.game.ctx.fillStyle = this.color;
-    this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+    this.game.ctx.fillRect(this.x, this.y, this.width, this.height,this.img);
+  } */
+
+    draw() {
+      this.img.src = '/docs/images/player.png';
+      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
 
   moveLeft() {

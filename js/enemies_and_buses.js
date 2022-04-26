@@ -7,6 +7,7 @@ class Enemies {
     this.width = width;
     this.height = height;
     this.speed = speed;
+    this.img = new Image();
 }
 
   left() {
@@ -23,12 +24,12 @@ class Enemies {
   bottom() {
   return this.y + this.height;
 }
-    
+
+draw() {
+  this.game.ctx.fillStyle = 'pink'
+  this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+}
   
-    draw() {
-      this.game.ctx.fillStyle = 'blue'
-      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
 
 }
 
@@ -37,8 +38,8 @@ class Enemies {
 // Create enemies extension for buses,
 
 class Buses extends Enemies {
-    constructor (game, x, y,color, width, height, speed ){
-        super(game, x, y, color, width, height,speed)
+    constructor (game, x, y, color, width, height, speed, img ){
+        super(game, x, y, color, width, height,speed, img)
     
     }
 
@@ -58,8 +59,8 @@ class Buses extends Enemies {
     }
 
     draw() {
-      this.game.ctx.fillStyle = 'green'
-      this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+      this.img.src = '/docs/images/bus2-removebg-preview.png';
+    this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 }
 
@@ -68,6 +69,11 @@ class Oldlady extends Enemies {
     constructor (game, x, y,color, width, height, speed){
         super(game, x, y, color, width, height, speed)
     
+    }
+
+    draw() {
+      this.img.src = '/docs/images/oldLady.png';
+    this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
     left() {
