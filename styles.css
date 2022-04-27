@@ -1,9 +1,16 @@
    
 body {
-    background-image: url('/docs/images/Calm\ Darya.jpg');
+background-image: url('/docs/images/Calm\ Darya.jpg');
    background-size: cover;
    font-family: 'Cousine', monospace;
+   
   }
+/* 
+  .main-screen{
+    display:flex;
+    
+  } */
+  
 
   h1 {
       font-size: 90px;
@@ -17,6 +24,8 @@ body {
     color: #fff;
     padding: 10px 30px;
     border-radius: 15px;
+    margin-left: 160px;
+    margin-top: 20px;
    
   }
   
@@ -25,18 +34,17 @@ body {
        */
   }
 
-  aside {
+/*   aside {
     color:white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-left: 1em;
     /* order-radius: 20px; */
     /* border: 5px solid rgb(172, 107, 0); */
-    background-color: darkgoldenrod;
+    /* background-color: darkgoldenrod;
     height: 700px;
     width: 400px;
   }
 
-  
+    */

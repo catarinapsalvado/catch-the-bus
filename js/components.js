@@ -50,7 +50,7 @@ class Game {
     this.drawScores();
     this.createEnemies();
     this.createBuses();
-   /*  this.createOldLady(); */
+     this.createOldLady(); 
     this.createRedSign();
     this.enemies.forEach((enemy) => {
       enemy.y += enemy.speed;
