@@ -1,48 +1,52 @@
 class Player {
-  constructor(game, x, y,/*  color */ width, height){
+  constructor(game, x, y, width, height){
     this.game = game;
     this.x = x;
     this.y = y;
-    //this.color = color;
     this.width = width;
     this.height = height;
     this.img = new Image();
+    //this.direction = 'right';
   }
 
-  /* draw() {
-    this.game.ctx.fillStyle = this.color;
-    this.game.ctx.fillRect(this.x, this.y, this.width, this.height,this.img);
-  } */
+  
 
     draw() {
-      this.img.src = '/docs/images/giphy.gif';
-      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-     /*  this.player.movements[index].sx, movements[index].sy, movements[index].px, movements[index].py, properties.position.x, properties.position.y, properties.width, properties.height);
-      index++;
-    if(index >= movements.length) index = 0;
+     
+   /*   if (this.player.direction === 'right') { */
+      if (this.game.frames % 80 === 0){
+        this.img.src = '/docs/images/player_!.png'
 
-     this.player.movements () = [
-        {sx: 0, sy: 30, px: 45, py: 45},
-      {sx: 0, sy: 75, px: 45, py: 45},
-      {sx: 0, sy: 120, px: 45, py: 45},
-      {sx: 0, sy: 165, px: 45, py: 45},
-        {sx: 45, sy: 30, px: 45, py: 45},
-      {sx: 45, sy: 75, px: 45, py: 45},
-      {sx: 45, sy: 120, px: 45, py: 45},
-      {sx: 45, sy: 165, px: 45, py: 45},
-        {sx: 90, sy: 30, px: 45, py: 45},
-        {sx: 90, sy: 75, px: 45, py: 45},
-        {sx: 90, sy: 120, px: 45, py: 45},
-        {sx: 90, sy: 165, px: 45, py: 45}
-   
-   ]; */
+      }else if (this.game.frames % 40 ===0){
+        this.img.src = '/docs/images/player_2.png'
+
+      } else if (this.game.frames % 20 ===0) {
+        this.img.src = '/docs/images/player_3.png'
+
+      }  
+    /*  } else {
+      if (this.game.frames % 80 === 0){
+        this.img.src = '/docs/images/player_1_left.png'
+
+      }else if (this.game.frames % 40 ===0){
+        this.img.src = '/docs/images/player_3_left.png'
+
+      } else if (this.game.frames % 20 ===0) {
+        this.img.src = '/docs/images/player_3_left.png'
+
+      }   */
+     /* } */
+      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height/*  this.direction */);
   }
 
   moveLeft() {
     this.x -= 10;
+   /*  this.direction = 'left'; */
   }
+
   moveRight() {
     this.x += 10;
+    /* this.direction = 'right'; */
   }
 
   moveUp() {

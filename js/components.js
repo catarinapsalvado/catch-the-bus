@@ -50,7 +50,7 @@ class Game {
     this.drawScores();
     this.createEnemies();
     this.createBuses();
-    this.createOldLady();
+   /*  this.createOldLady(); */
     this.createRedSign();
     this.enemies.forEach((enemy) => {
       enemy.y += enemy.speed;
@@ -85,7 +85,7 @@ class Game {
     
   }
 
-  createOldLady() {
+ createOldLady() {
     if (this.frames % 200 === 0) {
       this.oldLady.push(
         new Oldlady(
@@ -99,7 +99,7 @@ class Game {
         )
       );
     }
-  }
+  } 
 
   drawBackground(){
     this.background.src = '/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
@@ -142,20 +142,20 @@ class Game {
       return player.crashWith(sign);
     });
 
-    if (crashed ) {
+    if (crashed || crashed2 || crashed3 ) {
       this.count -= 5;
       this.enemies = [];
       this.oldLady = [];
-       this.redsign = [];
+      this.redsign = [];
 
-    } else if (crashed2)  
+    } /* else if (crashed2)  
     { this.count -= 5;
       this.oldLady = [];
 
     } else if (crashed3) {
     this.count -= 5;
     this.redsign = [];
-    }
+    } */
 
     this.ctx.fillStyle = "black";
     this.ctx.font = "20px Times New Roman";

@@ -1,3 +1,42 @@
-#game-start{
-    background-image: url('/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg')
-}
+   
+body {
+    background-image: url('/docs/images/Calm\ Darya.jpg');
+   background-size: cover;
+   font-family: 'Cousine', monospace;
+  }
+
+  h1 {
+      font-size: 90px;
+      color:aliceblue;
+      text-align: center;
+  }
+
+  body button {
+    font-size: 25px;
+    background-image: url('/docs/images/Calm\ Darya.jpg');
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 15px;
+   
+  }
+  
+  #start-page {
+     /*  background-image: url('/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg') ;
+       */
+  }
+
+  aside {
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+    /* order-radius: 20px; */
+    /* border: 5px solid rgb(172, 107, 0); */
+    background-color: darkgoldenrod;
+    height: 700px;
+    width: 400px;
+  }
+
+  

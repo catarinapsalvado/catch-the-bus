@@ -1,5 +1,9 @@
+let startScreen = document.getElementById('start-page');
+
+
 window.onload = () => {
   document.getElementById('start-button').onclick = () => {
+    startScreen.style.display = 'none';
     startGame();
   };
 
