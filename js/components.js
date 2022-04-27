@@ -80,7 +80,7 @@ class Game {
   }
 
   createBuses() {
-    if (this.frames % 300 === 0) {
+    if (this.frames % 150 === 0) {
       this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, "green", 125, 70, Math.random() * 3 + 1));}
     
   }
