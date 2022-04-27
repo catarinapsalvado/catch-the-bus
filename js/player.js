@@ -6,47 +6,47 @@ class Player {
     this.width = width;
     this.height = height;
     this.img = new Image();
-    //this.direction = 'right';
+    this.direction = 'right';
   }
 
   
 
     draw() {
      
-   /*   if (this.player.direction === 'right') { */
+      if (this.direction === 'right') { 
       if (this.game.frames % 80 === 0){
-        this.img.src = '/docs/images/player_!.png'
+        this.img.src = 'docs/assets/images/player_!.png'
 
       }else if (this.game.frames % 40 ===0){
-        this.img.src = '/docs/images/player_2.png'
+        this.img.src = 'docs/assets/images/player_2.png'
 
       } else if (this.game.frames % 20 ===0) {
-        this.img.src = '/docs/images/player_3.png'
+        this.img.src = 'docs/assets/images/player_3.png'
 
       }  
-    /*  } else {
+      } else {
       if (this.game.frames % 80 === 0){
-        this.img.src = '/docs/images/player_1_left.png'
+        this.img.src = 'docs/assets/images/player_1_left.png'
 
       }else if (this.game.frames % 40 ===0){
-        this.img.src = '/docs/images/player_3_left.png'
+        this.img.src = 'docs/assets/images/player_3_left.png'
 
       } else if (this.game.frames % 20 ===0) {
-        this.img.src = '/docs/images/player_3_left.png'
+        this.img.src = 'docs/assets/images/player_3_left.png'
 
-      }   */
-     /* } */
-      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height/*  this.direction */);
+      }   
+      } 
+      this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
 
   moveLeft() {
     this.x -= 10;
-   /*  this.direction = 'left'; */
+    this.direction = 'left'; 
   }
 
   moveRight() {
     this.x += 10;
-    /* this.direction = 'right'; */
+   this.direction = 'right'; 
   }
 
   moveUp() {

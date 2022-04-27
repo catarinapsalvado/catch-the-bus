@@ -1,6 +1,6 @@
    
 body {
-background-image: url('/docs/images/Calm\ Darya.jpg');
+background-image: url('docs/assets/images/Calm\ Darya.jpg');
    background-size: cover;
    font-family: 'Cousine', monospace;
    
@@ -20,13 +20,18 @@ background-image: url('/docs/images/Calm\ Darya.jpg');
 
   body button {
     font-size: 25px;
-    background-image: url('/docs/images/Calm\ Darya.jpg');
+    background-image: url('docs/assets/images/Calm\ Darya.jpg');
     color: #fff;
     padding: 10px 30px;
     border-radius: 15px;
     margin-left: 160px;
     margin-top: 20px;
    
+  }
+
+  canvas{
+      background-image: url('docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg');
+      background-size: cover;
   }
   
   #start-page {

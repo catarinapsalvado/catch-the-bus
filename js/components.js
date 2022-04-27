@@ -75,13 +75,13 @@ class Game {
 
   createEnemies() {
     if (this.frames % 200 === 0) {
-      this.enemies.push( new Enemies( this,Math.floor(Math.random() * 900),0,"blue", 100, 100, Math.random() * 3 + 1));
+      this.enemies.push( new Enemies( this, Math.floor(Math.random() * 900),0, 100, 100, Math.random() * 3 + 1));
     }
   }
 
   createBuses() {
-    if (this.frames % 150 === 0) {
-      this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, "green", 125, 70, Math.random() * 3 + 1));}
+    if (this.frames % 200 === 0) {
+      this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, 125, 70, Math.random() * 3 + 1));}
     
   }
 
@@ -92,7 +92,6 @@ class Game {
           this,
           Math.floor(Math.random() * 900),
           0,
-          "pink",
           100,
           105,
           Math.random() * 2 + 1
@@ -102,7 +101,7 @@ class Game {
   } 
 
   drawBackground(){
-    this.background.src = '/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
+    this.background.src = 'docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
     this.ctx.drawImage(this.background, this.x, this.y, this.width, this.height);
   }
 
@@ -113,7 +112,6 @@ class Game {
           this,
           Math.floor(Math.random() * 900),
           0,
-          "yellow",
           70,
           70,
           Math.random() * 3 + 1

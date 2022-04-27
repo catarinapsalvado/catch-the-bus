@@ -1,9 +1,8 @@
 class Enemies {
-  constructor(game, x, y,color, width, height, speed ){
+  constructor(game, x, y, width, height, speed ){
     this.game = game;
     this.x = x;
     this.y = y 
-    this.color = color;
     this.width = width;
     this.height = height;
     this.speed = speed;
@@ -26,7 +25,7 @@ class Enemies {
 }
 
 draw() {
-  this.img.src = '/docs/images/bird-removebg-preview.png';
+  this.img.src = 'docs/assets/images/bird-removebg-preview.png';
 this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 }
   
@@ -38,8 +37,8 @@ this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 // Create enemies extension for buses,
 
 class Buses extends Enemies {
-    constructor (game, x, y, color, width, height, speed, img ){
-        super(game, x, y, color, width, height,speed, img)
+    constructor (game, x, y, width, height, speed, img ){
+        super(game, x, y, width, height,speed, img)
     
     }
 
@@ -59,20 +58,20 @@ class Buses extends Enemies {
     }
 
     draw() {
-      this.img.src = '/docs/images/bus2-removebg-preview.png';
+      this.img.src = 'docs/assets/images/bus2-removebg-preview.png';
     this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 }
 
 
 class Oldlady extends Enemies {
-    constructor (game, x, y,color, width, height, speed){
-        super(game, x, y, color, width, height, speed)
+    constructor (game, x, y, width, height, speed){
+        super(game, x, y, width, height, speed)
     
     }
 
     draw() {
-      this.img.src = '/docs/images/oldLady.png';
+      this.img.src = 'docs/assets/images/oldLady.png';
     this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
@@ -96,8 +95,8 @@ class Oldlady extends Enemies {
 
 
 class Redsign extends Enemies {
-  constructor (game, x, y,color, width, height, speed){
-      super(game, x, y, color, width, height, speed)
+  constructor (game, x, y, width, height, speed){
+      super(game, x, y, width, height, speed)
   
   }
 
@@ -117,7 +116,7 @@ class Redsign extends Enemies {
   }
 
   draw() {
-    this.img.src = '/docs/images/red_sign_with_background-removebg-preview.png';
+    this.img.src = 'docs/assets/images/red_sign_with_background-removebg-preview.png';
   this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
   }
