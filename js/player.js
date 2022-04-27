@@ -29,7 +29,7 @@ class Player {
         this.img.src = 'docs/assets/images/player_1_left.png'
 
       }else if (this.game.frames % 40 ===0){
-        this.img.src = 'docs/assets/images/player_3_left.png'
+        this.img.src = 'docs/assets/images/player_2_left.png'
 
       } else if (this.game.frames % 20 ===0) {
         this.img.src = 'docs/assets/images/player_3_left.png'
