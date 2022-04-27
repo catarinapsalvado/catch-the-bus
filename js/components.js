@@ -74,19 +74,19 @@ class Game {
   }
 
   createEnemies() {
-    if (this.frames % 100 === 0) {
+    if (this.frames % 200 === 0) {
       this.enemies.push( new Enemies( this,Math.floor(Math.random() * 900),0,"blue", 100, 100, Math.random() * 3 + 1));
     }
   }
 
   createBuses() {
-    if (this.frames % 200 === 0) {
-      this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, "green", 125, 70, Math.random() * 2 + 1));}
+    if (this.frames % 300 === 0) {
+      this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, "green", 125, 70, Math.random() * 3 + 1));}
     
   }
 
   createOldLady() {
-    if (this.frames % 100 === 0) {
+    if (this.frames % 200 === 0) {
       this.oldLady.push(
         new Oldlady(
           this,
@@ -94,7 +94,7 @@ class Game {
           0,
           "pink",
           100,
-          125,
+          105,
           Math.random() * 2 + 1
         )
       );
@@ -107,20 +107,21 @@ class Game {
   }
 
   createRedSign() {
-    if (this.frames % 100 === 0) {
+    if (this.frames % 300 === 0) {
       this.redsign.push(
         new Redsign(
           this,
           Math.floor(Math.random() * 900),
           0,
           "yellow",
-          50,
-          50,
+          70,
+          70,
           Math.random() * 3 + 1
         )
       );
     }
   }
+  
 
   drawTime() {
     /*  let count = 30 - Math.floor(this.frames / 60); */

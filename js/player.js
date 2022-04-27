@@ -1,5 +1,5 @@
 class Player {
-  constructor(game, x, y,/*  color */ width, height, ){
+  constructor(game, x, y,/*  color */ width, height){
     this.game = game;
     this.x = x;
     this.y = y;
@@ -17,6 +17,25 @@ class Player {
     draw() {
       this.img.src = '/docs/images/giphy.gif';
       this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+     /*  this.player.movements[index].sx, movements[index].sy, movements[index].px, movements[index].py, properties.position.x, properties.position.y, properties.width, properties.height);
+      index++;
+    if(index >= movements.length) index = 0;
+
+     this.player.movements () = [
+        {sx: 0, sy: 30, px: 45, py: 45},
+      {sx: 0, sy: 75, px: 45, py: 45},
+      {sx: 0, sy: 120, px: 45, py: 45},
+      {sx: 0, sy: 165, px: 45, py: 45},
+        {sx: 45, sy: 30, px: 45, py: 45},
+      {sx: 45, sy: 75, px: 45, py: 45},
+      {sx: 45, sy: 120, px: 45, py: 45},
+      {sx: 45, sy: 165, px: 45, py: 45},
+        {sx: 90, sy: 30, px: 45, py: 45},
+        {sx: 90, sy: 75, px: 45, py: 45},
+        {sx: 90, sy: 120, px: 45, py: 45},
+        {sx: 90, sy: 165, px: 45, py: 45}
+   
+   ]; */
   }
 
   moveLeft() {

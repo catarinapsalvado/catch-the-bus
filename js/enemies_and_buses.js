@@ -26,8 +26,8 @@ class Enemies {
 }
 
 draw() {
-  this.game.ctx.fillStyle = 'blue'
-  this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+  this.img.src = '/docs/images/bird-removebg-preview.png';
+this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 }
   
 
@@ -117,8 +117,9 @@ class Redsign extends Enemies {
   }
 
   draw() {
-    this.game.ctx.fillStyle = 'yellow'
-    this.game.ctx.fillRect(this.x, this.y, this.width, this.height);
+    this.img.src = '/docs/images/red_sign_with_background-removebg-preview.png';
+  this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+  }
   }
 
-}
+
