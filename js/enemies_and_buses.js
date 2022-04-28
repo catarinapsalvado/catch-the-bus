@@ -25,7 +25,7 @@ class Enemies {
 }
 
 draw() {
-  this.img.src = 'docs/assets/images/bird-removebg-preview.png';
+  this.img.src = './docs/assets/images/bird-removebg-preview.png';
 this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 }
   
@@ -57,7 +57,7 @@ class Buses extends Enemies {
     }
 
     draw() {
-      this.img.src = 'docs/assets/images/bus2-removebg-preview.png';
+      this.img.src = './docs/assets/images/bus2-removebg-preview.png';
     this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 }
@@ -70,7 +70,7 @@ class Oldlady extends Enemies {
     }
 
     draw() {
-      this.img.src = 'docs/assets/images/oldLady.png';
+      this.img.src = './docs/assets/images/oldLady.png';
     this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     }
 
@@ -115,7 +115,7 @@ class Redsign extends Enemies {
   }
 
   draw() {
-    this.img.src = 'docs/assets/images/red_sign_with_background-removebg-preview.png';
+    this.img.src = './docs/assets/images/red_sign_with_background-removebg-preview.png';
   this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   }
   }

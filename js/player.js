@@ -15,24 +15,24 @@ class Player {
      
       if (this.direction === 'right') { 
       if (this.game.frames % 80 === 0){
-        this.img.src = 'docs/assets/images/player_!.png'
+        this.img.src = './docs/assets/images/player_!.png'
 
       }else if (this.game.frames % 40 ===0){
-        this.img.src = 'docs/assets/images/player_2.png'
+        this.img.src = './docs/assets/images/player_2.png'
 
       } else if (this.game.frames % 20 ===0) {
-        this.img.src = 'docs/assets/images/player_3.png'
+        this.img.src = './docs/assets/images/player_3.png'
 
       }  
       } else {
       if (this.game.frames % 80 === 0){
-        this.img.src = 'docs/assets/images/player_1_left.png'
+        this.img.src = './docs/assets/images/player_1_left.png'
 
       }else if (this.game.frames % 40 ===0){
-        this.img.src = 'docs/assets/images/player_2_left.png'
+        this.img.src = './docs/assets/images/player_2_left.png'
 
       } else if (this.game.frames % 20 ===0) {
-        this.img.src = 'docs/assets/images/player_3_left.png'
+        this.img.src = './docs/assets/images/player_3_left.png'
 
       }   
       } 

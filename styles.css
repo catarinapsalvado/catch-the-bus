@@ -53,13 +53,15 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
 
      
  aside > p{
-   margin-left: 40px;
-   margin-right: 2px;
+ 
+
  }
 
  #enemies {
+   
    display: flex;
    align-items: center;
+   
  }
 
   

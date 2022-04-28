@@ -101,7 +101,7 @@ class Game {
   } 
 
   drawBackground(){
-    this.background.src = 'docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
+    this.background.src = './docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg';
     this.ctx.drawImage(this.background, this.x, this.y, this.width, this.height);
   }
 
