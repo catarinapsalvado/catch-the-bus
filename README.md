@@ -9,13 +9,17 @@ GAME FOR DESKTOP ONLY: https://catarinapsalvado.github.io/catch-the-bus/
 
 ## Instructions 
 
-Use the arrow keys to move around the game display. If you catch 10 buses before the time's over, you win. If you can't do it, you will use. There are 3 elements to avoid: old lays, pooping birds and red traffic lights. You'll lose 5 seconds of game for everytime you touch one of them.
+Use the arrow keys to move around the game display. If you catch 10 buses before the time's over, you win. If you can't do it, you will use. 
+
+There are 3 elements to avoid: old lays, pooping birds and red traffic lights. You'll lose 5 seconds of game for everytime you touch one of them.
 
 ## About the project
 
-This game was created by me in a week, during the Ironhack Web Development bootcamp in Lisbon, in 2022. It was inspired in one of my daily life struggles during the moment: catch the bus to get home! I found 'Tori' a good name to give to the main character.
+This game was created by me in a week, during the Ironhack Web Development bootcamp in Lisbon, in 2022. It was inspired in one of my daily life struggles during the moment: catch the bus to get home! 
 
-'Catch the buses' was developed in Javascript, HTML and CSS (with Canvas)'
+I found 'Tori' a good name to give to the main character.
+
+<em>Catch the buses<em> was developed in Javascript, HTML and CSS (with Canvas)
 
 
 

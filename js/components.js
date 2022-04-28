@@ -28,6 +28,7 @@ class Game {
     this.count = null;
     this.timeOut = null;
     this.background = new Image();
+    this.isGameActive = false;
   }
 
   start() {
@@ -38,6 +39,7 @@ class Game {
     }, 1000 / 60);
     this.controls = new Controls(this);
     this.controls.keyboardEvents();
+    this.isGameActive = true;
   }
 
   update() {
@@ -179,12 +181,15 @@ class Game {
   }
 
   stop() {
+    this.isGameActive= false;
     clearInterval(this.intervalId);
+   
   }
 
   checkGameOver(){
 
     if (this.count <= 0 && this.score >= 10){
+      this.stop();
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.ctx.fillStyle = "white";
       this.ctx.font = "90px Cousine";
@@ -194,7 +199,8 @@ class Game {
       this.ctx.fillText(`Congratulations!`, 30, 350);
       this.ctx.fillText(`Your score:${this.score}`, 30, 400);
     }
-     else if(this.count <= 0 && this.score < 10) {
+     else if(this.count <= 0 && this.score < 10) { 
+      this.stop();
       this.ctx.clearRect(0, 0, this.width, this.height); 
       this.ctx.fillStyle = "white";
       this.ctx.font = "80px Cousine";
@@ -204,6 +210,7 @@ class Game {
       this.ctx.fillText(`Your score: ${this.score}`, 30, 350);
 
   }
+  
 }
 }
 
