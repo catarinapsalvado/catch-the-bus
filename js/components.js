@@ -1,13 +1,3 @@
-//Components
-
-//CLASSES FOR
-//PLAYER 1 - THE PERSON
-//AVOIDANCES
-//RED TRAFFIC LIGHT
-//RAIN
-//PEOPLE
-//BUSES
-
 class Game {
   constructor() {
     this.canvas = document.getElementById("canvas");
@@ -146,14 +136,7 @@ class Game {
       this.oldLady = [];
       this.redsign = [];
 
-    } /* else if (crashed2)  
-    { this.count -= 5;
-      this.oldLady = [];
-
-    } else if (crashed3) {
-    this.count -= 5;
-    this.redsign = [];
-    } */
+    } 
 
     this.ctx.fillStyle = "white";
     this.ctx.font = "32px Cousine";
@@ -210,7 +193,6 @@ class Game {
       this.ctx.fillText(`Your score: ${this.score}`, 30, 350);
 
   }
-  
 }
 }
 
