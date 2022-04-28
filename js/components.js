@@ -53,7 +53,7 @@ class Game {
      this.createOldLady(); 
     this.createRedSign();
     this.enemies.forEach((enemy) => {
-      enemy.y += enemy.speed;
+      enemy.x += enemy.speed;
       enemy.draw();
     });
     this.bus.forEach((buses) => {
@@ -68,25 +68,24 @@ class Game {
       red.y += red.speed;
       red.draw();
     });
-    /* this.checkColisionsEnemies(); */
     this.checkColisionsBuses();
     this.checkGameOver();
   }
 
   createEnemies() {
-    if (this.frames % 200 === 0) {
-      this.enemies.push( new Enemies( this, Math.floor(Math.random() * 900),0, 100, 100, Math.random() * 3 + 1));
+    if (this.frames % 150 === 0) {
+      this.enemies.push( new Enemies( this, 0, Math.floor(Math.random() * 600), 100, 100, Math.random() * 3 + 1));
     }
   }
 
   createBuses() {
-    if (this.frames % 200 === 0) {
+    if (this.frames % 190 === 0) {
       this.bus.push( new Buses( this, Math.floor(Math.random() * 900), 0, 125, 70, Math.random() * 3 + 1));}
     
   }
 
  createOldLady() {
-    if (this.frames % 200 === 0) {
+    if (this.frames % 225 === 0) {
       this.oldLady.push(
         new Oldlady(
           this,
@@ -106,7 +105,7 @@ class Game {
   }
 
   createRedSign() {
-    if (this.frames % 300 === 0) {
+    if (this.frames % 230 === 0) {
       this.redsign.push(
         new Redsign(
           this,
@@ -122,7 +121,6 @@ class Game {
   
 
   drawTime() {
-    /*  let count = 30 - Math.floor(this.frames / 60); */
     if (this.count <= 0) {
       clearInterval(this.intervalId);
     }
@@ -167,16 +165,6 @@ class Game {
   }
 
   checkColisionsBuses() {
-    /*  const catchBus = this.bus.some(function (bus) {
-          return player.crashWith(bus);
-        }); 
-
-        if (catchBus) {
-          this.score++;
-          this.bus.splice(i, 1);
-          this.bus = [];
-        }
-      } */
 
      for (let i = 0; i < this.bus.length; i++) {
       if (
@@ -189,16 +177,6 @@ class Game {
       }
     } 
   }
-  
-
-  /* checkGameOver() {
-
-      const timesup = this.count <= 0;
-
-      if (timesup) {
-        this.stop();
-      }
-    } */
 
   stop() {
     clearInterval(this.intervalId);
@@ -209,10 +187,12 @@ class Game {
     if (this.count <= 0 && this.score >= 10){
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.ctx.fillStyle = "white";
-      this.ctx.font = "100px Cousine";
-      this.ctx.textAlign = 'center';
-      this.ctx.fillText(` You won! Tori arrived safe at home. Congratulations!`, 0, this.width);
-      this.ctx.fillText(`You Won! Score:${this.score}`, 100, 300);
+      this.ctx.font = "90px Cousine";
+      this.ctx.fillText(`You won!`, 30, 250);
+      this.ctx.font = "50px Cousine";
+      this.ctx.fillText(`Tori arrived safe at home.`, 30, 300);
+      this.ctx.fillText(`Congratulations!`, 30, 350);
+      this.ctx.fillText(`Your score:${this.score}`, 30, 400);
     }
      else if(this.count <= 0 && this.score < 10) {
       this.ctx.clearRect(0, 0, this.width, this.height); 
@@ -220,9 +200,9 @@ class Game {
       this.ctx.font = "80px Cousine";
       this.ctx.fillText(`You've lost!`, 30, 250);
       this.ctx.font = "50px Cousine";
-      this.ctx.fillText(`Click start and try again.`, 30, 300);
+      this.ctx.fillText(`Click START and try again.`, 30, 300);
       this.ctx.fillText(`Your score: ${this.score}`, 30, 350);
-      
+
   }
 }
 }
