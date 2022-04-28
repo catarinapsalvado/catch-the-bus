@@ -208,15 +208,15 @@ class Game {
 
     if (this.count <= 0 && this.score >= 10){
       this.ctx.clearRect(0, 0, this.width, this.height);
-      this.ctx.fillStyle = "black";
-      this.ctx.font = "100px Times New Roman";
-      this.ctx.fillText("YOU'VE WON :)", 175, 300);
+      this.ctx.fillStyle = "white";
+      this.ctx.font = "100px Cousine";
+      this.ctx.fillText("You Won! You could get home! Score:${this.score}", 100, 300);
     }
      else if(this.count <= 0 && this.score < 10) {
       this.ctx.clearRect(0, 0, this.width, this.height); 
-      this.ctx.fillStyle = "black";
-      this.ctx.font = "100px Times New Roman";
-      this.ctx.fillText("YOU'VE LOST :(", 175, 300);
+      this.ctx.fillStyle = "white";
+      this.ctx.font = "50px Cousine";
+      this.ctx.fillText("You Lost! <br> Now you will sleep on the steet :( <br> Score ${this.score}", 100, 300);
      
   }
 }

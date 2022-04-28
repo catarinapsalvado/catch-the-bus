@@ -29,7 +29,6 @@ draw() {
 this.game.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 }
   
-
 }
 
 

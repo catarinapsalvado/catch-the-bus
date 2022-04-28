@@ -3,13 +3,17 @@ body {
 background-image: url('docs/assets/images/Calm\ Darya.jpg');
    background-size: cover;
    font-family: 'Cousine', monospace;
-   
+   background-repeat: no-repeat;
   }
-/* 
-  .main-screen{
-    display:flex;
+
+  
+    section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     
-  } */
   
 
   h1 {
@@ -24,32 +28,40 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
     color: #fff;
     padding: 10px 30px;
     border-radius: 15px;
-    margin-left: 160px;
-    margin-top: 20px;
+  
    
   }
 
   canvas{
       background-image: url('docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg');
       background-size: cover;
+      display: flex;
   }
   
-  #start-page {
-     /*  background-image: url('/docs/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg') ;
-       */
-  }
+ 
 
-/*   aside {
+  aside {
     color:white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 1em;
-    /* order-radius: 20px; */
-    /* border: 5px solid rgb(172, 107, 0); */
-    /* background-color: darkgoldenrod;
-    height: 700px;
+    border:5px solid black;
+    background-color: rgb(99, 102, 184);
+    height: 600px;
     width: 400px;
   }
 
-    */
+     
+ aside > p{
+   margin-left: 40px;
+   margin-right: 2px;
+ }
+
+ #enemies {
+   display: flex;
+   align-items: center;
+ }
+
+  
+
+    
