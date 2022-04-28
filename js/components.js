@@ -222,6 +222,7 @@ class Game {
       this.ctx.font = "50px Cousine";
       this.ctx.fillText(`Click start and try again.`, 30, 300);
       this.ctx.fillText(`Your score: ${this.score}`, 30, 350);
+      
   }
 }
 }
