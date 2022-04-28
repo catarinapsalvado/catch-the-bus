@@ -210,17 +210,23 @@ class Game {
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.ctx.fillStyle = "white";
       this.ctx.font = "100px Cousine";
+      this.ctx.textAlign = 'center';
+      this.ctx.fillText(` You won! Tori arrived safe at home. Congratulations!`, 0, this.width);
       this.ctx.fillText(`You Won! Score:${this.score}`, 100, 300);
     }
      else if(this.count <= 0 && this.score < 10) {
       this.ctx.clearRect(0, 0, this.width, this.height); 
       this.ctx.fillStyle = "white";
+      this.ctx.font = "80px Cousine";
+      this.ctx.fillText(`You've lost!`, 30, 250);
       this.ctx.font = "50px Cousine";
-      this.ctx.fillText(`You Lost! Score: ${this.score}`, 100, 300);
-     
+      this.ctx.fillText(`Click start and try again.`, 30, 300);
+      this.ctx.fillText(`Your score: ${this.score}`, 30, 350);
   }
 }
 }
+
+
 
 
 

@@ -1,9 +1,15 @@
    
 body {
-background-image: url('docs/assets/images/Calm\ Darya.jpg');
+  background-image: url('docs/assets/images/Calm\ Darya.jpg');
    background-size: cover;
    font-family: 'Cousine', monospace;
    background-repeat: no-repeat;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   min-height: 100vh;
+   margin:0;
+   gap:30px;
   }
 
   section {
@@ -19,6 +25,7 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
       font-size: 70px;
       color:aliceblue;
       text-align: center;
+      margin:0;
   }
 
  
@@ -38,8 +45,6 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
       background-image: url('docs/assets/images/vecteezy_high-city-skyline-view-from-bridge-background_6138952.jpg');
       background-size: cover;
       position:relative;
-        
-    
   }
   
  
@@ -78,7 +83,6 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
     border:3px solid black;
     background-image: url('docs/assets/images/Calm\ Darya.jpg'); 
     background-color: rgb(211, 127, 74);
-    height: 500px;
     width: 700px; 
     z-index: 1;
     margin-left: 400px;
@@ -94,6 +98,11 @@ background-image: url('docs/assets/images/Calm\ Darya.jpg');
    display: flex;
   justify-content: space-between
  }
-  
 
-    
+ .description{
+   text-align: center;
+ }
+
+ 
+
+   
