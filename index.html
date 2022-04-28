@@ -18,28 +18,53 @@
         
 <div class="mainscreen">
     <aside>
-    <h2>Help Tori to get home</h2>
-     <!--    <p id="'description">Oh no! Tori lost the sense of time during IronBeers and now she needs to run to take the last bus to get home.</p>
-        <p> Help Tori to make it! </p> -->
+    <h2>Help Tori get home!</h2>
+   
     <h3>Avoid:</h3>
-    <!-- <h4>Old Ladies (we know they're adorable but also your worst enemy whilde running to buses)</h4> -->
+   
    <div class="'enemies">
-    <h4>Old ladies, Pooping birds and Red lights will make Tori lose time</h4>
-    <img src="docs/assets/images/oldLady.png" alt="old lady" width="70" height="70">
-    <img src="docs/assets/images/bird-removebg-preview.png" alt="old lady" width="70" height="70">
-    <img src="docs/assets/images/red_sign_with_background-removebg-preview.png" alt="old lady" width="70" height="70">
-    </div>
+    <img src="docs/assets/images/oldLady.png" alt="old lady" width="50" height="50">
+    <img src="docs/assets/images/bird-removebg-preview.png" alt="bird" width="50" height="50">
+    <img src="docs/assets/images/red_sign_with_background-removebg-preview.png" alt="red sign" width="50" height="50">
     
-    <h3>To win you need to catch 10 buses in 60 seconds</h3>
-    <img src="docs/assets/images/bus2-removebg-preview.png" alt="old lady" width="70" height="70">
+    </div>
+
+    <h3>How to win:</h3>
+    <h4>Catch 10 buses in 60 seconds</h5>
+    <img src="docs/assets/images/bus2-removebg-preview.png" alt="bus" width="50" height="50">
+
+    <h3>Use the arrow keys</h3>
+    <img src="docs/assets/images/purple-keyboard.png" alt="arrows" width="70" height="50">
+    <br>
+    <br>
         <button id="start-button">START</button>
 </aside>  
  </div>   
-    <div id="start-page">        
-    
+    <div id="start-page">  
+        <br>
+        <p><b><em>Oh no!</em></b> Tori lost the sense of time during IronBeers and now she needs to run to take the last bus to get home.</p>
+        <h3>Avoid those or you will make Tori lose time:</h3>
+        <ul>
+            <li>Old Ladies (we know they're adorable but also your worst enemy while running to buses)<br>
+            </li>
+            <li>Pooping birds</li>
+            <li>Red traffic signs</li>
+        </ul>
+            <div class="enemies-start">
+        <img src="docs/assets/images/oldLady.png" alt="old lady" width="70" height="70">
+        <img src="docs/assets/images/bird-removebg-preview.png" alt="bird" width="70" height="70">
+        <img src="docs/assets/images/red_sign_with_background-removebg-preview.png" alt="red sign" width="60" height="60">
+        
+            </div>
+        <h3>Catch <b>10</b> buses and make her arrive safe and sound.</h3>
+        <div class="bus-arrows">
+        <img src="docs/assets/images/bus2-removebg-preview.png" alt="bus" width="50" height="50">
+        </div>
 </div>
+
+
     
-        <canvas id="canvas" style ="border-style: solid; border-width: 5px; /* margin-left: 300px */ ;" width="1000" height="600"></canvas>
+        <canvas id="canvas" style ="border-style: solid; border-width: 5px; ;" width="1000" height="600"></canvas>
    </section>
         <script type = "text/javascript" src="js/enemies_and_buses.js"></script>
     <script type="text/javascript" src="js/controls.js"></script>

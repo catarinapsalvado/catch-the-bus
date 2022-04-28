@@ -155,15 +155,15 @@ class Game {
     this.redsign = [];
     } */
 
-    this.ctx.fillStyle = "black";
-    this.ctx.font = "20px Times New Roman";
+    this.ctx.fillStyle = "white";
+    this.ctx.font = "32px Cousine";
     this.ctx.fillText(`Remaining Time: ${this.count.toFixed(0)}`, 40, 70);
   }
 
   drawScores() {
-    this.ctx.font = "32px serif";
+    this.ctx.font = "40px Cousine";
     this.ctx.fillStyle = "white";
-    this.ctx.fillText(`Score: ${this.score}`, 800, 550);
+    this.ctx.fillText(`Score: ${this.score}`, 750, 550);
   }
 
   checkColisionsBuses() {
@@ -210,13 +210,13 @@ class Game {
       this.ctx.clearRect(0, 0, this.width, this.height);
       this.ctx.fillStyle = "white";
       this.ctx.font = "100px Cousine";
-      this.ctx.fillText("You Won! You could get home! Score:${this.score}", 100, 300);
+      this.ctx.fillText(`You Won! Score:${this.score}`, 100, 300);
     }
      else if(this.count <= 0 && this.score < 10) {
       this.ctx.clearRect(0, 0, this.width, this.height); 
       this.ctx.fillStyle = "white";
       this.ctx.font = "50px Cousine";
-      this.ctx.fillText("You Lost! <br> Now you will sleep on the steet :( <br> Score ${this.score}", 100, 300);
+      this.ctx.fillText(`You Lost! Score: ${this.score}`, 100, 300);
      
   }
 }
